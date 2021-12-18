@@ -13,6 +13,7 @@ function addMovies(movies) {
         const img = document.createElement("img")
         img.setAttribute("src", `http://image.tmdb.org/t/p/w185${movie.poster_path}?api_key=44c162a820528a8e43d118f1e143586e`)
         const a = document.createElement("a")
+        console.log(`${location.hostname == "joykhera.github.io" ? '/movieMeter' : ''}/rate`)
         a.setAttribute("href", `${location.hostname == "joykhera.github.io" ? '/movieMeter' : ''}/rate?id=${movie.id}`)
         a.append(img)
         document.getElementById("movies").append(a)
