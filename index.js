@@ -1,4 +1,4 @@
-console.log(location)
+console.log(location.hostname == "joykhera.github.io")
 let page = 1
 let currentCategory = ''
 getMovies('now_playing')
@@ -27,7 +27,7 @@ document.addEventListener('scroll', async () => {
         const movies = await (await (await fetch(`https://api.themoviedb.org/3/movie/${currentCategory}?api_key=44c162a820528a8e43d118f1e143586e&page=${page}`)).json()).results
         for (const movie of movies) {
             document.getElementById('movies').innerHTML += `<a
-            href="${location.hostname == "joykhera.github.io" ? '/movieMeter/' : ''}/rate?id=${movie.id}">
+            href="${location.hostname == "joykhera.github.io" ? '/movieMeter' : ''}/rate?id=${movie.id}">
             <img src="http://image.tmdb.org/t/p/w185${movie.poster_path}?api_key=44c162a820528a8e43d118f1e143586e">
         </a>`
         }
