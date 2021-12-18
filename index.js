@@ -1,12 +1,11 @@
 let page = 1
 let currentCategory = ''
-getMovies('now_playing')
 
 function changeFunc() {
-    const selectBox = document.getElementById("selectMovieType");
-    const selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    getMovies(selectedValue);
-}
+    const selectBox = document.getElementById("selectMovieType")
+    const selectedValue = selectBox.options[selectBox.selectedIndex].value
+    getMovies(selectedValue)
+};
 
 function addMovies(movies) {
     for (const movie of movies) {
@@ -17,14 +16,14 @@ function addMovies(movies) {
         a.append(img)
         document.getElementById("movies").append(a)
     }
-}
+};
 
-async function getMovies(category) {
+(async function getMovies(category = 'now_playing') {
     document.getElementById('movies').innerHTML = ''
     const movies = await (await (await fetch(`https://api.themoviedb.org/3/movie/${category}?api_key=44c162a820528a8e43d118f1e143586e`)).json()).results
     addMovies(movies)
     currentCategory = category
-}
+})();
 
 document.addEventListener('scroll', async () => {
     if (document.documentElement.scrollHeight - document.documentElement.scrollTop <= document.documentElement.clientHeight + 500) {
@@ -32,4 +31,4 @@ document.addEventListener('scroll', async () => {
         const movies = await (await (await fetch(`https://api.themoviedb.org/3/movie/${currentCategory}?api_key=44c162a820528a8e43d118f1e143586e&page=${page}`)).json()).results
         addMovies(movies)
     }
-})
+});
