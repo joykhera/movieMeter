@@ -1,0 +1,48 @@
+button {
+    float: left;
+    width: 25%;
+}
+
+img {
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+    float: left;
+    width: 20%;
+    height: 350px;
+}
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 768px){
+    img {
+        margin-right: 1.6%;
+        margin-left: 1.6%;
+        width: 30%
+    }
+}
+
+@media (max-width: 480px){
+    img {width: 45%}
+}
+
+body{
+    font-family: 'Courier New', monospace;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rate.css">
+    <title>Rate</title>
+</head>
+
+<body>
+    <h1 id='h1'></h1>
+    <center><img id="img" src="" width="20%" height="25%"></center>
+    <p id='releaseDate'></p>
+    <p id='genre'></p>
+    <p id='actors'></p>
+    <p id='summary'></p>
+
+    <div id="acting">
+        <label for="actingSlider">Acting</label>
+        <input type="range" min="1" max="100" value="50" class="slider" id="actingSlider">
+    </div>
+    <div id="graphics">
+        <label for="graphicsSlider">Graphics</label>
+        <input type="range" min="1" max="100" value="50" class="slider" id="graphicsSlider">
+    </div>
+    <div id="plot">
+        <label for="myRange">Plot</label>
+        <input type="range" min="1" max="100" value="50" class="slider" id="plotSlider">
+    </div>
+    <div id="entertainmentValue">
+        <label for="entertainmentValueSlider">Entertainment Value</label>
+        <input type="range" min="1" max="100" value="50" class="slider" id="entertainmentValueSlider">
+    </div>
+    <div id="worstMyTime">
+        <label for="worthMyTimeSlider">Worth My Time?</label>
+        <input type="range" min="1" max="100" value="50" class="slider" id="worthMyTimeSlider">
+    </div>
+
+    <center><button type="button" onclick="window.open('./index.html','_self')">Home</button></center>
+
+</body>
+<script src='./rate.js'></script>
+
+</html>

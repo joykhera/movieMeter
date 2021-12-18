@@ -1,0 +1,33 @@
+<!-- Joy Khera, Carson Lee, Dean Bohus, Terry Thompson -->
+<!-- I pledge my honor that I have abided by the Stevens honor system -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src='./index.js' defer></script>
+    <title>Movie Meter</title>
+    <link rel="shortcut icon" type="image/jpg" href="favicon.jpeg" />
+</head>
+
+<body>
+    <h1>
+        <center>Movie Meter</center>
+    </h1>
+
+    <label for="selectMovieType">Choose a movie type:</label>
+    <select name="selectMovieType" id="selectMovieType" onchange="changeFunc()">
+        <option value="now_playing" class="movieType">Now playing</option>
+        <option value="popular" class="movieType">Popular</option>
+        <option value="top_rated" class="movieType">Top rated</option>
+        <option value="upcoming" class="movieType">Upcoming</option>
+    </select>
+
+    <div id='movies'></div>
+
+</body>
+
+</html>
