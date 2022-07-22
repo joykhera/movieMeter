@@ -18,12 +18,12 @@ function addMovies(movies) {
     }
 };
 
-(async function getMovies(category = 'now_playing') {
+async function getMovies(category) {
     document.getElementById('movies').innerHTML = ''
     const movies = await (await (await fetch(`https://api.themoviedb.org/3/movie/${category}?api_key=44c162a820528a8e43d118f1e143586e`)).json()).results
     addMovies(movies)
     currentCategory = category
-})();
+};
 
 document.addEventListener('scroll', async () => {
     if (document.documentElement.scrollHeight - document.documentElement.scrollTop <= document.documentElement.clientHeight + 500) {
@@ -32,3 +32,5 @@ document.addEventListener('scroll', async () => {
         addMovies(movies)
     }
 });
+
+getMovies('now_playing')
